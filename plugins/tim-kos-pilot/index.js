@@ -31,10 +31,6 @@ function pilot(name, deps) {
       console.log("flat trim");
       return deps.client.ftrim();
     });
-    socket.on('/pilot/animate', function (cmd) {
-      console.log("animate", cmd);
-      return deps.client.animate(cmd.action, 500);
-    });
     socket.on('/pilot/channel', function (cmd) {
       channel = (channel == 0) ? 1 : 0;
       console.log("switching to channel %d", channel);
